@@ -1,4 +1,8 @@
 export const customTheme = {
+  config: {
+    initialColorMode: 'system',
+    useSystemColorMode: false,
+  },
   colors: {
     primary: '#49beb7',
     secondary: '#085f63',
