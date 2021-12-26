@@ -10,35 +10,10 @@ import {
   Flex,
 } from '@chakra-ui/react';
 import Image from 'next/image';
-import { FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa';
+import { FaInstagram, FaTwitter, FaYoutube, FaGithub } from 'react-icons/fa';
 import React from 'react';
 
-const SocialButton = ({
-  children,
-  label,
-  href,
-}) => {
-  return (
-    <chakra.button
-      bg={useColorModeValue('blackAlpha.100', 'whiteAlpha.100')}
-      rounded={'full'}
-      w={8}
-      h={8}
-      cursor={'pointer'}
-      as={'a'}
-      href={href}
-      display={'inline-flex'}
-      alignItems={'center'}
-      justifyContent={'center'}
-      transition={'background 0.3s ease'}
-      _hover={{
-        bg: useColorModeValue('blackAlpha.200', 'whiteAlpha.200'),
-      }}>
-      <VisuallyHidden>{label}</VisuallyHidden>
-      {children}
-    </chakra.button>
-  );
-};
+import { SocialButton } from '.';
 
 export default function SmallCentered() {
   return (
@@ -95,6 +70,9 @@ export default function SmallCentered() {
             </SocialButton>
             <SocialButton label={'Instagram'} href={'#'}>
               <FaInstagram />
+            </SocialButton>
+            <SocialButton label={'Github'} href={'#'}>
+              <FaGithub />
             </SocialButton>
           </Stack>
         </Container>

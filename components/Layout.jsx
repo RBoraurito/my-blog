@@ -9,7 +9,7 @@ const Layout = ({children}) => {
       minH="100vh"
     >
       <MyHeader />
-      <children />
+        {children}
       <MyFooter />
     </Grid>
   )

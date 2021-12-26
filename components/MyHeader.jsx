@@ -41,7 +41,7 @@ export default function Simple() {
       borderWidth={useColorModeValue('0', '2px')}
       borderBottom={useColorModeValue('', 'gray.200')}
     >
-      <Container maxW='container.md'>
+      <Container maxW='container.lg'>
         <Flex w='full' h={16} alignItems={'center'} justifyContent={'space-between'}>
           <IconButton
             size={'md'}
