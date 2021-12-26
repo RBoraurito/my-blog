@@ -9,6 +9,7 @@ import {
   Grid,
   GridItem,
 } from '@chakra-ui/react'
+import NextLink from 'next/link'
 import Image from 'next/image'
 import { FaInstagram, FaTwitter, FaYoutube, FaGithub } from 'react-icons/fa';
 import React from 'react'
@@ -41,9 +42,20 @@ const Hero = () => {
             color={useColorModeValue('gray.900', 'gray.100')}
             mb={4}
           >
-            I'm software developer especiliy focused on <strong>frontend(Vue & React)</strong>. I'm from Barquisimeto, Venezuela, but currently living in the Santo Domingo, Dominican Republic. I'm a self-taught developer, and I'm always looking for new challenges and opportunities. You can find me at the following social networks:
-
+            I'm software developer especiliy focused on <strong>frontend(Vue & React)</strong>. I'm from Barquisimeto, Venezuela, but currently living in the Santo Domingo, Dominican Republic. I'm a self-taught developer, and I'm always looking for new challenges and opportunities. 
+            <NextLink href="/about">
+              <Link color="primary"> See more</Link>
+            </NextLink>
           </Text>
+          <Text
+            fontSize="lg"
+            color={useColorModeValue('gray.900', 'gray.100')}
+            fontWeight={600}
+            mb={4}
+          >
+            You can find me at the following social networks:
+          </Text>
+
           <Stack direction={'row'} spacing={6}>
             <SocialButton label={'Twitter'} href={'#'}>
               <FaTwitter />
