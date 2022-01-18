@@ -5,7 +5,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "tina-dev": "yarn tinacms server:start -c \"next dev\"",
+    "tina-build": "yarn tinacms server:start -c \"next build\"",
+    "tina-start": "yarn tinacms server:start -c \"next start\""
   },
   "dependencies": {
     "@chakra-ui/icons": "^1.1.1",
@@ -16,6 +19,7 @@
     "next": "12.0.7",
     "react": "17.0.2",
     "react-dom": "17.0.2",
-    "react-icons": "^4.3.1"
+    "react-icons": "^4.3.1",
+    "styled-components": "^5.3.3"
   }
 }

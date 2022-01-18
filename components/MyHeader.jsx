@@ -16,13 +16,6 @@ import { HamburgerIcon, CloseIcon, MoonIcon, SunIcon } from '@chakra-ui/icons';
 import Image from 'next/image';
 import NextLink from 'next/link';
 
-const Links = [
-  { label: 'Me', url: '/about'},
-  { label:'Projects', url: '/projects' },
-  { label:'Blog', url: '/blog' },
-  { label: 'Links', url: '/links' }
-];
-
 const NavLink = ({ url, children }) => (
   <NextLink href={url}>
     <Link
@@ -42,6 +35,18 @@ const NavLink = ({ url, children }) => (
     </Link>
   </NextLink>
 );
+
+const links = [
+  {
+    url: '/about',
+    label: 'About',
+  },
+  {
+    url: '/about',
+    label: 'Proyects',
+  },
+
+]
 
 export default function Simple() {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -88,7 +93,7 @@ export default function Simple() {
               as={'nav'}
               spacing={4}
               display={{ base: 'none', md: 'flex' }}>
-              {Links.map((link) => (
+              {links.map((link) => (
                 <NavLink key={link.label} url={link.url}>
                   {link.label}
                 </NavLink>
@@ -115,7 +120,7 @@ export default function Simple() {
         {isOpen ? (
           <Box pb={4} display={{ md: 'none' }}>
             <Stack as={'nav'} spacing={4}>
-              {Links.map((link) => (
+              {links.map((link) => (
                 <NavLink key={link.label} url={link.url}>
                   {link.label}
                 </NavLink>

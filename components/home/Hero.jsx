@@ -1,3 +1,4 @@
+import React from 'react'
 import {
   Box,
   Text,
@@ -12,7 +13,6 @@ import {
 import NextLink from 'next/link'
 import Image from 'next/image'
 import { FaInstagram, FaTwitter, FaYoutube, FaGithub } from 'react-icons/fa';
-import React from 'react'
 
 import { SocialButton } from '..'
 

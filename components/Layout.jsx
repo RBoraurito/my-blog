@@ -1,5 +1,5 @@
-import { Grid } from '@chakra-ui/react'
 import React from 'react'
+import { Grid } from '@chakra-ui/react'
 import { MyHeader, MyFooter } from '.'
 
 const Layout = ({children}) => {
@@ -8,9 +8,11 @@ const Layout = ({children}) => {
       templateRows="auto 1fr auto"
       minH="100vh"
     >
-      <MyHeader />
+      <MyHeader
+      />
         {children}
-      <MyFooter />
+      <MyFooter
+      />
     </Grid>
   )
 }

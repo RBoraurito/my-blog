@@ -15,7 +15,7 @@ import React from 'react';
 
 import { SocialButton } from '.';
 
-export default function SmallCentered() {
+export default function MyFooter() {
   return (
     <Box
       bg={useColorModeValue('gray.50', 'gray.900')}
