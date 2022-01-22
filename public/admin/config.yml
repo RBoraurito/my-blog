@@ -28,3 +28,30 @@ collections:
             - label: "Link"
               name: "link"
               widget: "string"
+  - label: "Blog"
+    name: "blog"
+    folder: "content/blog"
+    create: true
+    fields: 
+      - label: "Title"
+        name: "title"
+        widget: "string"
+        required: true
+      - label: "Card Image"
+        name: "cardImage"
+        widget: "image"
+      - label: "Featured Image"
+        name: "featuredImage"
+        widget: "image"
+      - label: "Description"
+        name: "description"
+        widget: "text"
+        required: true
+      - label: "Created at"
+        name: "createdAt"
+        widget: "date"
+      - label: "Read time"
+        name: "readTime"
+        widget: "number"
+        value_type: "int"
+          
