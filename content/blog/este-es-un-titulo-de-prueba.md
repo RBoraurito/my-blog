@@ -1,5 +1,9 @@
 ---
 title: Este es un titulo de prueba
+tags:
+  - Javascript
+  - React
+  - JamStack
 cardImage: img/javascript.png
 featuredImage: img/firm-image.jpg
 description: Este es un texto de prueba muy importante para poder tener una
