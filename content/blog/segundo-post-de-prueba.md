@@ -1,5 +1,9 @@
 ---
 title: SEgundo post de prueba
+tags:
+  - Javascript
+  - React
+  - CMS
 cardImage: img/me.jpeg
 featuredImage: img/banner-principal-aprobado-sales-event.jpg
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
