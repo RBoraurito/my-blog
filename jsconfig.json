@@ -1,9 +1,11 @@
 {
   "compilerOptions": {
     "baseUrl": ".",
+    "module": "esnext",
     "paths": {
       "components/*": ["./components/*"],
       "helpers/*": ["./helpers/*"],
+      "content/*": ["./content/*"],
     }
   }
 }

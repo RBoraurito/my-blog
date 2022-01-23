@@ -37,6 +37,27 @@ collections:
         name: "title"
         widget: "string"
         required: true
+      - label: "Tags"
+        name: "tags"
+        widget: "select"
+        multiple: true
+        max: 3
+        options: [
+          "Javascript",
+          "HTML",
+          "CSS",
+          "Vue.js",
+          "React",
+          "Nextjs",
+          "Web Performance",
+          "Life style",
+          "Productivity",
+          "CMS",
+          "JamStack",
+          "Frontend",
+          "Serverless",
+          "Experiments"
+        ]
       - label: "Card Image"
         name: "cardImage"
         widget: "image"
