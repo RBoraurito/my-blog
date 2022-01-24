@@ -8,6 +8,6 @@ cardImage: img/javascript.png
 featuredImage: img/firm-image.jpg
 description: Este es un texto de prueba muy importante para poder tener una
   previsualizacion buena del contenido que acabo de escribir
-createdAt: 23 Jan, 2022
+createdAt: Jan 23, 2022
 readTime: 4
 ---
