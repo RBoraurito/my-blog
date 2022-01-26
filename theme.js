@@ -4,9 +4,10 @@ export const customTheme = {
     useSystemColorMode: false,
   },
   colors: {
-    primary: '#49beb7',
-    secondary: '#085f63',
+    primary: '#ff9f68',
+    secondary: '#f85959',
     danger: '#ff5959',
     warning: '#facf5a',
+    black: '#333',
   }
 }

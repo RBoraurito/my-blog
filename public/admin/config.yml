@@ -71,6 +71,8 @@ collections:
       - label: "Created at"
         name: "createdAt"
         widget: "date"
+        date_format: "DD/MMM/YYYY"
+        format: "MMM DD, YYYY"
       - label: "Read time"
         name: "readTime"
         widget: "number"

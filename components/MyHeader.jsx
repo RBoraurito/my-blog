@@ -103,7 +103,7 @@ export default function Simple() {
               size={'md'}
               display={{ base: 'none', md: 'block'}}
               icon={colorMode === 'dark' ? <SunIcon /> : <MoonIcon />}
-              bgColor={colorMode === 'dark' ? 'yellow.400' : 'blue.600'}
+              bgColor={colorMode === 'dark' ? 'yellow.400' : 'gray.500'}
               color={colorMode === 'dark' ? 'black' : 'white'}
               onClick={() => toggleColorMode(!colorMode)}
             />
@@ -112,7 +112,7 @@ export default function Simple() {
             size={'md'}
             display={{ base: 'block', md: 'none'}}
             icon={colorMode === 'dark' ? <SunIcon /> : <MoonIcon />}
-            bgColor={colorMode === 'dark' ? 'yellow.400' : 'blue.600'}
+            bgColor={colorMode === 'dark' ? 'yellow.400' : 'gray.500'}
             color={colorMode === 'dark' ? 'black' : 'white'}
             onClick={() => toggleColorMode(!colorMode)}
           />

@@ -21,7 +21,7 @@ const Hero = () => {
     <Container
       as="section"
       alignItems="center"
-      maxW="container.lg"
+      maxW="container.md"
       my={10}
     >
       <Grid
@@ -32,7 +32,7 @@ const Hero = () => {
         <GridItem colSpan={{sm:2}}>
           <Heading
             as="h1"
-            color={useColorModeValue('primary', 'white')}
+            color={useColorModeValue('secondary', 'primary')}
             mb={4}
           >
             Hi, I'm Ricardo Boraure.
@@ -44,7 +44,7 @@ const Hero = () => {
           >
             I'm software developer especiliy focused on <strong>frontend(Vue & React)</strong>. I'm from Barquisimeto, Venezuela, but currently living in the Santo Domingo, Dominican Republic. I'm a self-taught developer, and I'm always looking for new challenges and opportunities. 
             <NextLink href="/about">
-              <Link color="primary"> See more</Link>
+              <Link fontWeight="bold" color={useColorModeValue('secondary', 'primary')} w> See more</Link>
             </NextLink>
           </Text>
           <Text
