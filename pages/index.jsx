@@ -1,7 +1,8 @@
 import React, {useContext} from 'react'
-import { Hero } from 'components/home'
+import { Hero } from 'components/sections'
 import { BlogPosts } from 'components/sections'
 import getMany from 'helpers/getMany'
+import getGlobal from 'helpers/getGlobal'
 
 const home = ({blogPosts}) => {
   return (
@@ -13,7 +14,7 @@ const home = ({blogPosts}) => {
 }
 
 export async function getStaticProps() {
-
+  const globals = getGlobal()
   const paths = await getMany('content/blog')
   const blogPosts = []
   paths.forEach(path => {
@@ -23,7 +24,8 @@ export async function getStaticProps() {
 
   return {
     props: {
-      blogPosts
+      blogPosts,
+      ...globals
     }
   }
 }

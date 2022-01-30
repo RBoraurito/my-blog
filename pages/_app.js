@@ -8,7 +8,11 @@ const App = ({ Component, pageProps }) => {
   return (
     <>
       <ChakraProvider theme={theme}>
-        <Layout>
+        <Layout
+          title={pageProps.title}
+          image={pageProps.image}
+          social={pageProps.social}
+        >
           <Component {...pageProps} />
         </Layout>
       </ChakraProvider>

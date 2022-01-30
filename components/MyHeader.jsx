@@ -42,13 +42,20 @@ const links = [
     label: 'About',
   },
   {
-    url: '/about',
-    label: 'Proyects',
+    url: '/blog',
+    label: 'Blog',
+  },
+  {
+    url: '/projects',
+    label: 'Projects',
   },
 
 ]
 
-export default function Simple() {
+export default function MyHeader({
+  title,
+  image
+}) {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { colorMode, toggleColorMode } = useColorMode()
 
@@ -79,13 +86,13 @@ export default function Simple() {
               <Flex align="center">
                 <Box as="figure" borderRadius="full" overflow="hidden" h="36px" w="36px">
                   <Image
-                    src='/img/avatar.svg'
+                    src={`/${image}`}
                     width={36}
                     height={36}
                   />
                 </Box>
                 <Text as="p" fontSize="xl" color={useColorModeValue('secondary', 'primary')} ml={2} fontWeight={700}>
-                  RBoraurito
+                  {title}
                 </Text>
               </Flex>
             </NextLink>

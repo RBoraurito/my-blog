@@ -61,9 +61,6 @@ collections:
       - label: "Card Image"
         name: "cardImage"
         widget: "image"
-      - label: "Featured Image"
-        name: "featuredImage"
-        widget: "image"
       - label: "Description"
         name: "description"
         widget: "text"
@@ -77,4 +74,7 @@ collections:
         name: "readTime"
         widget: "number"
         value_type: "int"
+      - label: "Content"
+        name: "content"
+        widget: "markdown"
           

@@ -2,7 +2,6 @@ import {
   Box,
   chakra,
   Container,
-  Link,
   Stack,
   Text,
   useColorModeValue,
@@ -10,12 +9,13 @@ import {
   Flex,
 } from '@chakra-ui/react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { FaInstagram, FaTwitter, FaYoutube, FaGithub } from 'react-icons/fa';
 import React from 'react';
 
 import { SocialButton } from '.';
 
-export default function MyFooter() {
+export default function MyFooter({title, image, social}) {
   return (
     <Box
       bg={useColorModeValue('gray.50', 'gray.900')}
@@ -31,20 +31,20 @@ export default function MyFooter() {
         <Flex align="center">
           <Box as="figure" borderRadius="full" overflow="hidden" h="42px" w="42px">
             <Image
-              src='/img/avatar.svg'
+              src={`/${image}`}
               width={42}
               height={42}
             />
           </Box>
           <Text as="p" fontSize="xl" color="secondary" ml={2} fontWeight={700}>
-            RBoraurito
+            {title}
           </Text>
         </Flex>
         <Stack direction={'row'} spacing={6}>
-          <Link href={'#'}>Home</Link>
-          <Link href={'#'}>About</Link>
-          <Link href={'#'}>Blog</Link>
-          <Link href={'#'}>Contact</Link>
+          <Link href='/'>Home</Link>
+          <Link href='/about'>About</Link>
+          <Link href='/blog'>Blog</Link>
+          <Link href='/projects'>Projects</Link>
         </Stack>
       </Container>
 
@@ -62,16 +62,13 @@ export default function MyFooter() {
           align={{ base: 'center', md: 'center' }}>
           <Text>© 2020 Chakra Templates. All rights reserved</Text>
           <Stack direction={'row'} spacing={6}>
-            <SocialButton label={'Twitter'} href={'#'}>
+            <SocialButton label={'Twitter'} href={social[2].link}>
               <FaTwitter />
             </SocialButton>
-            <SocialButton label={'YouTube'} href={'#'}>
-              <FaYoutube />
-            </SocialButton>
-            <SocialButton label={'Instagram'} href={'#'}>
+            <SocialButton label={'Instagram'} href={social[1].link}>
               <FaInstagram />
             </SocialButton>
-            <SocialButton label={'Github'} href={'#'}>
+            <SocialButton label={'Github'} href={social[0].link}>
               <FaGithub />
             </SocialButton>
           </Stack>
