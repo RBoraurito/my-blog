@@ -28,6 +28,7 @@ const BlogPosts = ({posts}) => (
         readTime={post.readTime}
         tags={post.tags}
         createdAt={post.createdAt}
+        slug={post.slug}
       />
     ))}
   </Container>

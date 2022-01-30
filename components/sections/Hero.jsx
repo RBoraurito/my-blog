@@ -16,7 +16,7 @@ import { FaInstagram, FaTwitter, FaYoutube, FaGithub } from 'react-icons/fa';
 
 import { SocialButton } from '..'
 
-const Hero = () => {
+const Hero = ({social}) => {
   return (
     <Container
       as="section"
@@ -57,13 +57,13 @@ const Hero = () => {
           </Text>
 
           <Stack direction={'row'} spacing={6}>
-            <SocialButton label={'Twitter'} href={'#'}>
+            <SocialButton label={'Twitter'} href={social[2].link}>
               <FaTwitter />
             </SocialButton>
-            <SocialButton label={'Instagram'} href={'#'}>
+            <SocialButton label={'Instagram'} href={social[1].link}>
               <FaInstagram />
             </SocialButton>
-            <SocialButton label={'Github'} href={'#'}>
+            <SocialButton label={'Github'} href={social[0].link}>
               <FaGithub />
             </SocialButton>
           </Stack>

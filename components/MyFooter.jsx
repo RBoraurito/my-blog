@@ -15,7 +15,7 @@ import React from 'react';
 
 import { SocialButton } from '.';
 
-export default function MyFooter({title, image, social}) {
+const MyFooter = ({title, image, social = []}) => {
   return (
     <Box
       bg={useColorModeValue('gray.50', 'gray.900')}
@@ -62,13 +62,13 @@ export default function MyFooter({title, image, social}) {
           align={{ base: 'center', md: 'center' }}>
           <Text>© 2020 Chakra Templates. All rights reserved</Text>
           <Stack direction={'row'} spacing={6}>
-            <SocialButton label={'Twitter'} href={social[2].link}>
+            <SocialButton label={'Twitter'} href={social[2]?.link}>
               <FaTwitter />
             </SocialButton>
-            <SocialButton label={'Instagram'} href={social[1].link}>
+            <SocialButton label={'Instagram'} href={social[1]?.link}>
               <FaInstagram />
             </SocialButton>
-            <SocialButton label={'Github'} href={social[0].link}>
+            <SocialButton label={'Github'} href={social[0]?.link}>
               <FaGithub />
             </SocialButton>
           </Stack>
@@ -77,3 +77,5 @@ export default function MyFooter({title, image, social}) {
     </Box>
   );
 }
+
+export default MyFooter;
