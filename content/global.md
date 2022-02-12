@@ -8,4 +8,10 @@ social:
     link: https://www.instagram.com/rboraure/
   - name: twitter
     link: https://twitter.com/RBoraure
+navigation:
+  - name: Pages
+    links:
+      - name: Home
+        link: /
+        icon: arrow-right
 ---
