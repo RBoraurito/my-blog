@@ -1,19 +1,19 @@
 ---
-cardImage: /img/javascript.png
-readTime: 4
-author:
-  name: Ricardo Boraure
-  image: img/avatar.svg
-  contact: https://twitter.com/RBoraure
-featuredImage: img/firm-image.jpg
 title: Este es un titulo de prueba
 tags:
   - Javascript
   - React
   - JamStack
+cardImage: /img/javascript.png
+featuredImage: /img/firm-image.jpg
 description: Este es un texto de prueba muy importante para poder tener una
   previsualizacion buena del contenido que acabo de escribir
 createdAt: Jan 23, 2022
+readTime: 4
+author:
+  name: Ricardo Boraure
+  image: img/avatar.svg
+  contact: https://twitter.com/RBoraure
 ---
 <!--StarFragment-->
 
