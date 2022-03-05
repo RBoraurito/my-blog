@@ -1,24 +1,30 @@
 import React from 'react'
-import { Grid } from '@chakra-ui/react'
 import { MyHeader, MyFooter } from '.'
 
-const Layout = ({title, image, social, children}) => {
+const Layout = ({title, image, social, navigation, children}) => {
   return (
-    <Grid
-      templateRows="auto 1fr auto"
-      minH="100vh"
-    >
-      <MyHeader
-        title={title}
-        image={image}
-      />
-        {children}
-      <MyFooter
-        title={title}
-        social={social}
-        image={image}
-      />
-    </Grid>
+    <>
+      <div
+        className="grid min-h-screen layout"
+      >
+        <MyHeader
+          title={title}
+          image={image}
+          navigation={navigation}
+        />
+          {children}
+        <MyFooter
+          title={title}
+          social={social}
+          image={image}
+        />
+      </div>
+      <style jsx>{`
+        .layout {
+          grid-template-rows: auto 1fr auto;
+        }
+      `}</style>
+    </>
   )
 }
 

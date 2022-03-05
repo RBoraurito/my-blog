@@ -6,6 +6,8 @@
       "components/*": ["./components/*"],
       "helpers/*": ["./helpers/*"],
       "content/*": ["./content/*"],
+      "styles/*": ["./styles/*"],
+      "icons/*": ["./icons/*"],
     }
   }
 }

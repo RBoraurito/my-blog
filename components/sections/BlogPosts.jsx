@@ -1,25 +1,14 @@
 import React from 'react';
-import {
-  Container,
-  Heading,
-  Text,
-  useColorModeValue
-} from '@chakra-ui/react';
 import { BlogCard } from "components"
 
 const BlogPosts = ({posts}) => (
-  <Container maxW="container.md">
-    <Heading
-      as="h2"
-      size="xl"
-      color={useColorModeValue('secondary', 'primary')}
-      mb="1"
-    >
+  <div className="container">
+    <h2 className="mb-1 text-2xl font-semibold lg:text-3xl text-secondary dark:text-primary">
       My posts
-    </Heading>
-    <Text fontSize="md" mb="6">
+    </h2>
+    <p className="mb-6 text-base">
       I like to write about stuff that I find interesting.
-    </Text>
+    </p>
     {posts.map(post => (
       <BlogCard
         title={post.title}
@@ -29,9 +18,10 @@ const BlogPosts = ({posts}) => (
         tags={post.tags}
         createdAt={post.createdAt}
         slug={post.slug}
+        key={post.slug}
       />
     ))}
-  </Container>
+  </div>
 );
 
 export default BlogPosts;

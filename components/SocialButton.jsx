@@ -1,5 +1,4 @@
 import React from 'react'
-import { chakra, VisuallyHidden, useColorModeValue } from '@chakra-ui/react';
 
 const SocialButton = ({
   children,
@@ -7,26 +6,16 @@ const SocialButton = ({
   href,
 }) => {
   return (
-    <chakra.button
-      bg={useColorModeValue('blackAlpha.100', 'whiteAlpha.100')}
-      rounded={'full'}
-      w={8}
-      h={8}
-      cursor={'pointer'}
-      as={'a'}
+    <a
+      title={label}
       href={href}
-      target="_blank"
-      display={'inline-flex'}
-      alignItems={'center'}
-      justifyContent={'center'}
-      transition={'background 0.3s ease'}
-      _hover={{
-        bg: useColorModeValue('blackAlpha.200', 'whiteAlpha.200'),
-        color: 'primary'
-      }}>
-      <VisuallyHidden>{label}</VisuallyHidden>
+      className="
+        bg-black rounded-full w-8 h-8 cursor-pointer inline-flex items-center justify-center transition-all duration-300 ease-in text-white
+        dark:bg-white hover:bg-gradient-to-r hover:from-secondary hover:to-primary
+      "
+    >
       {children}
-    </chakra.button>
+    </a>
   );
 };
 

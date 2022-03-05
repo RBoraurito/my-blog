@@ -1,86 +1,42 @@
 import React from 'react'
-import {
-  Box,
-  Text,
-  Link,
-  Stack,
-  Heading,
-  useColorModeValue,
-  Container,
-  Grid,
-  GridItem,
-} from '@chakra-ui/react'
 import NextLink from 'next/link'
 import Image from 'next/image'
-import { FaInstagram, FaTwitter, FaYoutube, FaGithub } from 'react-icons/fa';
 
-import { SocialButton } from '..'
+import { SocialButton, Icons } from '..'
 
 const Hero = ({social}) => {
   return (
-    <Container
-      as="section"
-      alignItems="center"
-      maxW="container.md"
-      my={10}
-    >
-      <Grid
-        templateColumns={{ sm: 'repeat(3, 1fr)'}}
-        alignItems="center"
-        gap={8}
-      >
-        <GridItem colSpan={{sm:2}}>
-          <Heading
-            as="h1"
-            color={useColorModeValue('secondary', 'primary')}
-            mb={4}
-          >
-            Hi, I'm Ricardo Boraure.
-          </Heading>
-          <Text
-            fontSize="lg"
-            color={useColorModeValue('gray.900', 'gray.100')}
-            mb={4}
-          >
-            I'm software developer especiliy focused on <strong>frontend(Vue & React)</strong>. I'm from Barquisimeto, Venezuela, but currently living in the Santo Domingo, Dominican Republic. I'm a self-taught developer, and I'm always looking for new challenges and opportunities. 
-            <NextLink href="/about">
-              <Link fontWeight="bold" color={useColorModeValue('secondary', 'primary')} w> See more</Link>
-            </NextLink>
-          </Text>
-          <Text
-            fontSize="lg"
-            color={useColorModeValue('gray.900', 'gray.100')}
-            fontWeight={600}
-            mb={4}
-          >
-            You can find me at the following social networks:
-          </Text>
-
-          <Stack direction={'row'} spacing={6}>
-            <SocialButton label={'Twitter'} href={social[2].link}>
-              <FaTwitter />
-            </SocialButton>
-            <SocialButton label={'Instagram'} href={social[1].link}>
-              <FaInstagram />
-            </SocialButton>
-            <SocialButton label={'Github'} href={social[0].link}>
-              <FaGithub />
-            </SocialButton>
-          </Stack>
-        </GridItem>
-        <GridItem
-          borderRadius={'full'}
-          overflow="hidden"
-          maxH={{base: '200px' ,sm: '300px'}}
-          maxW={{base: '200px' ,sm: '300px'}}
-          order={{base: -1, sm: 0}}
-          mx="auto"
+    <section className="container grid sm:grid-cols-3 items-center gap-8 my-10">
+      <div className='sm:col-span-2'>
+        <h1 className="text-secondary dark:text-primary mb-4 text-5xl"
         >
-          <Image src="/img/me.jpeg" width={300} height={300} />
-        </GridItem>
-      </Grid>
-
-    </Container>
+          Hi, I'm Ricardo Boraure.
+        </h1>
+        <p className='text-gray-900 dark:text-gray-100 text-lg mb-4'>
+          I'm software developer especiliy focused on <strong>frontend(Vue & React)</strong>. I'm from Barquisimeto, Venezuela, but currently living in the Santo Domingo, Dominican Republic. I'm a self-taught developer, and I'm always looking for new challenges and opportunities. 
+          <NextLink href="/about" className="font-bold text-secondary dark:text-primary">
+            See more
+          </NextLink>
+        </p>
+        <p className='text-lg text-gray-900 dark:text-gray-100 font-semibold mb-4'>
+          You can find me at the following social networks:
+        </p>
+        <div className='flex space-x-6'>
+          <SocialButton label={'Twitter'} href={social[2].link}>
+            <Icons name='twitter' size={16} />
+          </SocialButton>
+          <SocialButton label={'Instagram'} href={social[1].link}>
+            <Icons name='instagram' size={16} />
+          </SocialButton>
+          <SocialButton label={'Github'} href={social[0].link}>
+            <Icons name='github' size={16} />
+          </SocialButton>
+        </div>
+      </div>
+      <figure className='sm:col-span-1 rounded-full overflow-hidden max-h-52 sm:max-h-80 max-w-52 sm:max-w-80 order-first sm:order-last mx-auto'>
+        <Image src="/img/me.jpeg" width={300} height={300} />
+      </figure>
+    </section>
   )
 }
 

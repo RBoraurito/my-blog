@@ -28,6 +28,32 @@ collections:
             - label: "Link"
               name: "link"
               widget: "string"
+        - label: "Navigation"
+          name: "navigation"
+          widget: "list"
+          collapsed: true
+          fields: 
+            - label: "Name"
+              name: "name"
+              widget: "string"
+            - label: "Links"
+              name: "links"
+              widget: "list"
+              collapsed: true
+              fields: 
+              - label: "Name"
+                name: "name"
+                widget: "string"
+              - label: "Link"
+                name: "link"
+                widget: "string"
+              - label: "Icon"
+                name: "icon"
+                widget: "string"
+              - label: "Is external"
+                name: "isExternal"
+                widget: "boolean"
+                required: false
   - label: "Blog"
     name: "blog"
     folder: "content/blog"
