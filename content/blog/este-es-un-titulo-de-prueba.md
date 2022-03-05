@@ -12,7 +12,7 @@ createdAt: Jan 23, 2022
 readTime: 4
 author:
   name: Ricardo Boraure
-  image: img/avatar.svg
+  image: /img/avatar.svg
   contact: https://twitter.com/RBoraure
 ---
 <!--StarFragment-->
