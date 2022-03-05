@@ -9,15 +9,15 @@ const BlogCard = ({
   readTime,
   tags,
   createdAt,
-  slug
+  slug,
 }) => {
   const formattedSlug = slug.replace('.md', '')
   return (
     <div className="flex items-center flex-shrink-0 px-4 py-3 mb-6 border border-gray-100 rounded-md shadow-lg dark:border-gray-700">
       <Link href={`/blog/${encodeURIComponent(formattedSlug)}`} passHref>
         <a>
-          <figure className='min-w-[100px] mr-4 rounded-sm'>
-            <Image src={`/${image}`} width={100} height={100} />
+          <figure className='min-w-[100px] mr-4 rounded-md overflow-hidden'>
+            <Image src={image} width={100} height={100} />
           </figure>
         </a>
       </Link>
@@ -34,7 +34,7 @@ const BlogCard = ({
         </p>
         {tags.map(tag => (
           <span
-            className="px-2 py-1 mr-2 text-white rounded-md shadow-md bg-secondary dark:bg-primary"
+            className="px-2 py-1 mr-2 text-white text-sm font-bold rounded-xl shadow-md bg-secondary dark:bg-primary"
             key={tag}
           >
             {tag}

@@ -3,7 +3,7 @@ import { BlogCard } from "components"
 
 const BlogPosts = ({posts}) => (
   <div className="container">
-    <h2 className="mb-1 text-2xl font-semibold lg:text-3xl text-secondary dark:text-primary">
+    <h2 className="mb-1 text-3xl font-black lg:text-4xl text-secondary dark:text-primary">
       My posts
     </h2>
     <p className="mb-6 text-base">

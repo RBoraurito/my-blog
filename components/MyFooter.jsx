@@ -13,7 +13,7 @@ const MyFooter = ({title, image, social = []}) => {
         <div className='flex items-center'>
           <figure className='overflow-hidden rounded-full h-11 w-11'>
             <Image
-              src={`/${image}`}
+              src={image}
               width={42}
               height={42}
             />

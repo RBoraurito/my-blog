@@ -8,7 +8,7 @@ const Hero = ({social}) => {
   return (
     <section className="container grid sm:grid-cols-3 items-center gap-8 my-10">
       <div className='sm:col-span-2'>
-        <h1 className="text-secondary dark:text-primary mb-4 text-5xl"
+        <h1 className="font-black text-secondary dark:text-primary mb-4 text-5xl"
         >
           Hi, I'm Ricardo Boraure.
         </h1>
@@ -33,7 +33,7 @@ const Hero = ({social}) => {
           </SocialButton>
         </div>
       </div>
-      <figure className='sm:col-span-1 rounded-full overflow-hidden max-h-52 sm:max-h-80 max-w-52 sm:max-w-80 order-first sm:order-last mx-auto'>
+      <figure className='sm:col-span-1 rounded-full overflow-hidden max-h-52 sm:max-h-80 max-w-52 sm:max-w-80 order-first sm:order-last mx-auto border-4 border-secondary dark:border-primary'>
         <Image src="/img/me.jpeg" width={300} height={300} />
       </figure>
     </section>
