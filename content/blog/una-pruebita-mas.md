@@ -12,12 +12,29 @@ author:
   name: Joseito peron
   contact: https://www.instagram.com/rboraure/?hl=es-la
 ---
-## Holis paito 
+## Holis paito
 
-asdfasdfasdfasdfasdfasdfasdf asdfasdfasdf asdfasdfa asdf asdf asdf sadfasdf
+###### Eso mi rey
+
+asdfasdfasdfasdfasdfasdfasdf asdfasdfasdf **asdfasdfa** asdf [asdf ](https://twitter.com)asdf *sadfasdf*
 
 > Claro que yes papito
 
 * Eso sipiris
 * asdfasd fasdfasdf asdfasdf
 * eso midmsodf
+
+1. Paso uno
+2. Paso dos
+
+![asdfasd](/img/javascript.png)
+
+`Esto es una linea de codigo`
+
+```javascript
+const usage = () => {
+  console.log('eso es')
+}
+
+usage()
+```
