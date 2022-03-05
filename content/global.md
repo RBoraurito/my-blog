@@ -1,6 +1,6 @@
 ---
 title: RBoraurito
-image: img/avatar.svg
+image: /img/avatar.svg
 social:
   - name: github
     link: https://github.com/RBoraurito
