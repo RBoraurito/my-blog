@@ -1,25 +1,25 @@
 ---
-title: Este es un titulo de prueba
-tags:
-  - Javascript
-  - React
-  - JamStack
-cardImage: img/javascript.png
-description: Este es un texto de prueba muy importante para poder tener una
-  previsualizacion buena del contenido que acabo de escribir
-createdAt: Jan 23, 2022
+cardImage: /img/javascript.png
 readTime: 4
 author:
   name: Ricardo Boraure
   image: img/avatar.svg
   contact: https://twitter.com/RBoraure
 featuredImage: img/firm-image.jpg
+title: Este es un titulo de prueba
+tags:
+  - Javascript
+  - React
+  - JamStack
+description: Este es un texto de prueba muy importante para poder tener una
+  previsualizacion buena del contenido que acabo de escribir
+createdAt: Jan 23, 2022
 ---
 <!--StarFragment-->
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque consectetur, felis mollis molestie porttitor, est mi eleifend mauris, ac scelerisque tellus orci nec nunc. Nullam tristique laoreet libero, et vulputate libero facilisis sed. Donec nunc justo, egestas vitae felis vitae, volutpat egestas tellus. Duis at nibh vel massa varius eleifend eu eu ligula. Cras ut urna ultricies massa vestibulum congue. Etiam a risus venenatis, ullamcorper magna vel, porttitor urna. Mauris sit amet nunc vel justo iaculis tempor. Vestibulum efficitur efficitur quam sed pulvinar. Donec at sollicitudin orci, at aliquet purus. Vestibulum accumsan ligula ut faucibus sollicitudin.
 
-![Una imagen de ricard](img/me.jpeg)
+![Una imagen de ricard](/img/me.jpeg)
 
 Interdum et malesuada fames ac ante ipsum primis in faucibus. In hac habitasse platea dictumst. Maecenas ut ornare magna. Nunc dictum dapibus velit sit amet elementum. Cras suscipit massa justo, nec tincidunt lacus ullamcorper at. Praesent non diam et tortor dapibus suscipit eu ac nibh. Phasellus quis nisl at ex iaculis sodales. Mauris placerat porta lectus, sed interdum nibh laoreet in. Aenean fermentum diam sem, in ullamcorper ipsum malesuada vitae. Praesent lobortis rutrum ex sed scelerisque. In vulputate ante in libero aliquet lacinia. Mauris gravida augue et elementum maximus. Vivamus sed magna aliquam, pulvinar sapien ut, venenatis ligula.
 
