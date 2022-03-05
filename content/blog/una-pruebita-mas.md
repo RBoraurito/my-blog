@@ -3,6 +3,7 @@ title: Una pruebita mas
 tags:
   - Experiments
 cardImage: /img/me.jpeg
+featuredImage: /img/banner-principal-aprobado-sales-event.jpg
 description: Esta es una pruebita
 createdAt: Mar 05, 2022
 readTime: 4
