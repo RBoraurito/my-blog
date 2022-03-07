@@ -2,6 +2,7 @@ import React from 'react'
 import { MyHeader, MyFooter } from '.'
 
 const Layout = ({title, image, social, navigation, children}) => {
+
   return (
     <>
       <div

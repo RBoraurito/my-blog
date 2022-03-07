@@ -1,9 +1,18 @@
 import { Fragment } from 'react'
 import { MenuSection } from '.'
+import { SunIcon, MoonIcon } from '@heroicons/react/outline'
 import { Dialog, Transition } from '@headlessui/react'
 
 function MenuModal ({isOpen, setIsOpen, navigation}) {
   const closeModal = () => setIsOpen(false)
+  const setLightTheme = () => {
+    document.querySelector('html').classList.remove('dark')
+    document.querySelector('html').classList.add('light')
+  }
+  const setDarkTheme = () => {
+    document.querySelector('html').classList.add('dark')
+    document.querySelector('html').classList.remove('light')
+  }
 
   return (
       <Transition appear show={isOpen} as={Fragment}>
@@ -48,6 +57,45 @@ function MenuModal ({isOpen, setIsOpen, navigation}) {
                     key={name}
                   />
                 ))}
+                <h4 className='mb-4 text-xl font-bold text-gray-700'>
+                  Theme
+                </h4>
+                <ul className='mb-6'>
+                  <li className='mb-2'>
+                    <a
+                      onClick={setLightTheme}
+                      className='flex items-center justify-between cursor-pointer'
+                      >
+                      <span className='flex space-x-3'>
+                        <SunIcon
+                          className="text-gray-700"
+                          width={20}
+                          height={20}
+                        />
+                        <p>
+                          Set light theme
+                        </p>
+                      </span>
+                    </a>
+                  </li>
+                  <li className='mb-2'>
+                    <a
+                      onClick={setDarkTheme}
+                      className='flex items-center justify-between cursor-pointer'
+                    >
+                      <span className='flex space-x-3'>
+                        <MoonIcon
+                          className="text-gray-700"
+                          width={20}
+                          height={20}
+                        />
+                        <p>
+                          Set dark theme
+                        </p>
+                      </span>
+                    </a>
+                  </li>
+                </ul>
               </nav>
             </div>
           </Transition.Child>

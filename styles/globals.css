@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .raw-html {
-  @apply text-gray-800 font-semibold;
+  @apply text-gray-800 dark:text-white font-semibold;
 
   & h1, & h2, & h3 {
     @apply text-3xl sm:text-4xl lg:text-5xl font-black text-secondary dark:text-primary mb-4 ;
@@ -22,8 +22,7 @@
   }
 
   blockquote {
-    @apply px-8 py-4 bg-primary bg-opacity-20 border-l-4 border-primary dark:border-opacity-50 mb-4 text-gray-600;
-
+    @apply px-8 py-4 bg-primary dark:bg-white dark:bg-opacity-100 bg-opacity-20 border-l-4 border-primary dark:border-opacity-50 mb-4 text-gray-600;
   }
 
   ul {
@@ -43,10 +42,10 @@
   }
 
   p code {
-    @apply bg-gray-900 rounded-md px-2 text-primary mb-4; 
+    @apply bg-gray-800 dark:bg-white rounded-md px-2 text-primary mb-4;
   }
   pre {
-    @apply bg-gray-900 rounded-md p-6 mb-4;
+    @apply bg-gray-800 dark:bg-white rounded-md p-6 mb-4;
 
     & code {
       @apply text-primary text-lg;

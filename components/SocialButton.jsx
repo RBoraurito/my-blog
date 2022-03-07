@@ -9,10 +9,7 @@ const SocialButton = ({
     <a
       title={label}
       href={href}
-      className="
-        bg-black rounded-full w-8 h-8 cursor-pointer inline-flex items-center justify-center transition-all duration-300 ease-in text-white
-        dark:bg-white hover:bg-gradient-to-r hover:from-secondary hover:to-primary
-      "
+      className="inline-flex items-center justify-center w-8 h-8 text-white transition-all duration-300 ease-in bg-black rounded-full cursor-pointer  dark:bg-white dark:text-gray-900 hover:bg-gradient-to-r hover:from-secondary hover:to-primary"
     >
       {children}
     </a>

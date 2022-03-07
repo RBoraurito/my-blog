@@ -5,35 +5,35 @@ const BlogDetailHeader = ({
 }) => {
   return (
     <section className='pt-8 lg:pt-12'>
-      <figure className='rounded-md overflow-hidden mb-6 max-h-60 flex items-center justify-center'>
+      <figure className='flex items-center justify-center mb-6 overflow-hidden rounded-md max-h-60'>
         <img src={image} alt="" />
       </figure>
-      <h1 className='text-4xl lg:text-5xl text-gray-700 font-bold dark:text-white'>
+      <h1 className='text-4xl font-bold text-gray-700 lg:text-5xl dark:text-white'>
         {title}
       </h1>
-      <hr className='rounded-full border-2 border-primary mb-6' />
-      <div className="sm:flex sm:space-x-10 mb-8">
-        <div className="flex space-x-4 items-center">
+      <hr className='mb-6 border-2 rounded-full border-primary' />
+      <div className="mb-8 sm:flex sm:space-x-10">
+        <div className="flex items-center space-x-4">
           <a href={author?.contact} target="_blank" title='Contact me'>
-            <figure className='w-14 h-14 rounded-full overflow-hidden'>
+            <figure className='overflow-hidden rounded-full w-14 h-14'>
               <img src={author?.image} alt={`${author?.name} avatar`} />
             </figure>
           </a>
           <div className="">
             <a href={author?.contact} target="_blank" title='Contact me'>
-              <h3 className='text-base font-semibold text-gray-600'>
+              <h3 className='text-base font-semibold text-gray-600 dark:text-white'>
                 {author?.name}
               </h3>
             </a>
-            <p className='text-sm text-gray-600 font-medium'>
+            <p className='text-sm font-medium text-gray-600 dark:text-white'>
               { createdAt } | {readTime} min read.
             </p>
           </div>
         </div>
-        <ul className='mt-6 sm:mt-0 flex items-center'>
+        <ul className='flex items-center mt-6 sm:mt-0'>
           {tags.map(tag => (
             <li
-              className="px-2 py-1 text-white text-sm font-bold rounded-xl shadow-md bg-secondary dark:bg-primary mr-2 last:mr-0"
+              className="px-2 py-1 mr-2 text-sm font-bold text-white shadow-md rounded-xl bg-secondary dark:bg-primary last:mr-0"
               key={tag}
             >
               {tag}
@@ -41,7 +41,7 @@ const BlogDetailHeader = ({
           ))}
         </ul>
       </div>
-      <hr className='rounded-full border shadow-lg' />
+      <hr className='border rounded-full shadow-lg' />
     </section>
   )
 }
