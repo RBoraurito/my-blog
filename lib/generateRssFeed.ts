@@ -1,3 +1,4 @@
+import React from 'react'
 import ReactDOMServer from 'react-dom/server'
 import { Feed } from 'feed'
 import { mkdir, writeFile } from 'fs/promises'
@@ -5,14 +6,14 @@ import { mkdir, writeFile } from 'fs/promises'
 import { getAllArticles } from './getAllArticles'
 
 export async function generateRssFeed() {
-  let articles = await getAllArticles()
-  let siteUrl = process.env.NEXT_PUBLIC_SITE_URL
-  let author = {
+  const articles = await getAllArticles()
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL
+  const author = {
     name: 'Spencer Sharp',
     email: 'spencer@planetaria.tech',
   }
 
-  let feed = new Feed({
+  const feed = new Feed({
     title: author.name,
     description: 'Your blog description',
     author,
@@ -28,20 +29,20 @@ export async function generateRssFeed() {
   })
 
   for (let article of articles) {
-    let url = `${siteUrl}/articles/${article.slug}`
-    let html = ReactDOMServer.renderToStaticMarkup(
-      <article.component isRssFeed />
-    )
+    const {component, slug, title, description, date} = article
+    const url = `${siteUrl}/articles/${slug}`
+    const Component = React.createElement(component, {isRssFeed: true})
+    const html = ReactDOMServer.renderToStaticMarkup(Component)
 
     feed.addItem({
-      title: article.title,
+      title,
       id: url,
       link: url,
-      description: article.description,
+      description,
       content: html,
       author: [author],
       contributor: [author],
-      date: new Date(article.date),
+      date: new Date(date),
     })
   }
 

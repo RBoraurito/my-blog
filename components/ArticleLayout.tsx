@@ -1,9 +1,9 @@
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 
-import { Container } from '@/components/Container'
-import { formatDate } from '@/lib/formatDate'
-import { Prose } from '@/components/Prose'
+import { Container } from 'components/Container'
+import { formatDate } from 'lib/formatDate'
+import { Prose } from 'components/Prose'
 
 function ArrowLeftIcon(props) {
   return (
@@ -18,12 +18,19 @@ function ArrowLeftIcon(props) {
   )
 }
 
+export interface ArticleLayoutProps {
+  children: JSX.Element;
+  meta: MetaData;
+  isRssFeed: boolean;
+  previousPathname: string;
+}
+
 export function ArticleLayout({
   children,
   meta,
   isRssFeed = false,
   previousPathname,
-}) {
+}: ArticleLayoutProps) {
   let router = useRouter()
 
   if (isRssFeed) {

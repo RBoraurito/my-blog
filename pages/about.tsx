@@ -3,14 +3,14 @@ import Head from 'next/head'
 import Link from 'next/link'
 import clsx from 'clsx'
 
-import { Container } from '@/components/Container'
+import { Container } from 'components/Container'
 import {
   TwitterIcon,
   InstagramIcon,
   GitHubIcon,
   LinkedInIcon,
-} from '@/components/SocialIcons'
-import portraitImage from '@/images/portrait.jpg'
+} from 'components/SocialIcons'
+import portraitImage from 'images/portrait.jpg'
 
 function SocialLink({ className, href, children, icon: Icon }) {
   return (
