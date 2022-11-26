@@ -1,6 +1,6 @@
-# Spotlight
+# RBoraure Blog
 
-Spotlight is a [Tailwind UI](https://tailwindui.com) site template built using [Tailwind CSS](https://tailwindcss.com) and [Next.js](https://nextjs.org).
+This is a blog made with Nextjs and Tailwind UI
 
 ## Getting started
 
