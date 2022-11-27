@@ -69,9 +69,9 @@ function Article({ article }) {
   )
 }
 
-function SocialLink({ icon: Icon, ...props }) {
+function SocialLink({ icon: Icon, href ,...props }) {
   return (
-    <Link className="group -m-1 p-1" {...props}>
+    <Link className="group -m-1 p-1" href={href} {...props}>
       <Icon className="h-6 w-6 fill-zinc-500 transition group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300" />
     </Link>
   )
@@ -83,29 +83,53 @@ function Resume() {
       company: 'Webcat, LLC',
       title: 'React Developer',
       logo: webcat,
-      start: 'mar. 2022',
-      end: 'Present',
+      start: {
+        label: 'mar. 2022',
+        dateTime: new Date('March 14, 2022').toDateString()
+      },
+      end: {
+        label: 'Present',
+        dateTime: new Date().toDateString()
+      },
     },
     {
       company: 'Kation Interactive',
       title: 'Frontend Developer',
       logo: kation,
-      start: 'dec. 2020',
-      end: 'Present',
+      start: {
+        label: 'dec. 2020',
+        dateTime: new Date('December 01, 2020').toDateString()
+      },
+      end: {
+        label: 'Present',
+        dateTime: new Date().toDateString()
+      },
     },
     {
       company: 'Habitat Web',
       title: 'Web Developer - Freelance',
       logo: habitatWeb,
-      start: 'sep. 2020',
-      end: 'apr. 2021',
+      start: {
+        label: 'sep. 2020',
+        dateTime: new Date('September 21, 2020').toDateString(),
+      },
+      end: {
+        label: 'apr. 2020',
+        dateTime: new Date('April 16, 2021').toDateString(),
+      },
     },
     {
       company: 'Punto Cero',
       title: 'Frontend Developer - Freelance',
       logo: puntoCero,
-      start: 'jul. 2020',
-      end: 'apr. 2022',
+      start: {
+        label: 'jul. 2020',
+        dateTime: new Date('July 12, 2020').toDateString(),
+      },
+      end: {
+        label: 'apr. 2022',
+        dateTime: new Date('April 12, 2022').toDateString(),
+      },
     },
   ]
 
@@ -133,23 +157,22 @@ function Resume() {
               <dt className="sr-only">Date</dt>
               <dd
                 className="ml-auto text-xs text-zinc-400 dark:text-zinc-500"
-                aria-label={`${role.start.label ?? role.start} until ${
-                  role.end.label ?? role.end
+                aria-label={`${role.start.label ?? role.start} until ${role.end
                 }`}
               >
-                <time dateTime={role.start.dateTime ?? role.start}>
-                  {role.start.label ?? role.start}
+                <time dateTime={role.start.dateTime}>
+                  {role.start.label}
                 </time>{' '}
                 <span aria-hidden="true">—</span>{' '}
-                <time dateTime={role.end.dateTime ?? role.end}>
-                  {role.end.label ?? role.end}
+                <time dateTime={role.end.dateTime}>
+                  {role.end.label}
                 </time>
               </dd>
             </dl>
           </li>
         ))}
       </ol>
-      <Button href="#" variant="secondary" className="group mt-6 w-full">
+      <Button href="/cv.pdf" target="_blank" download variant="secondary" className="group mt-6 w-full">
         Download CV
         <ArrowDownIcon className="h-4 w-4 stroke-zinc-400 transition group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50" />
       </Button>
