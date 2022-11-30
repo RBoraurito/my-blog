@@ -66,13 +66,18 @@ Card.Cta = function CardCta({ children }) {
   )
 }
 
+interface CardEyebrowProps extends CardProps {
+  decorate: boolean;
+  [key: string]: any;
+}
+
 Card.Eyebrow = function CardEyebrow({
   as: Component = 'p',
   decorate = false,
   className,
   children,
   ...props
-}) {
+}: CardEyebrowProps) {
 
   const Wrapper = ({children,...props}: WrapperProps) => <Component {...props}>{children}</Component>
 
