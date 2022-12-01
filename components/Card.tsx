@@ -4,7 +4,7 @@ import { ChevronRightIcon } from 'components/icon/ChevronRight'
 import React, { ReactNode } from 'react';
 
 interface CardProps {
-  as: string;
+  as?: string;
   className?: string;
   children: ReactNode;
 }
@@ -67,7 +67,7 @@ Card.Cta = function CardCta({ children }) {
 }
 
 interface CardEyebrowProps extends CardProps {
-  decorate: boolean;
+  decorate?: boolean;
   [key: string]: any;
 }
 
