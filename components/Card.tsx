@@ -36,12 +36,19 @@ Card.Link = function CardLink({ children, href,...props }) {
   )
 }
 
-Card.Title = function CardTitle({ as: Component = 'h2', href, children }) {
+interface CardTitleProps {
+  as?: string;
+  href?: string;
+  children: ReactNode;
+  target?: string;
+}
+
+Card.Title = function CardTitle({ as: Component = 'h2', href, target = '',children }: CardTitleProps) {
   const Wrapper = ({children,...props}: WrapperProps) => <Component {...props}>{children}</Component>
 
   return (
     <Wrapper className="text-base font-semibold tracking-tight text-zinc-800 dark:text-zinc-100">
-      {href ? <Card.Link href={href}>{children}</Card.Link> : children}
+      {href ? <Card.Link href={href} target={target}>{children}</Card.Link> : children}
     </Wrapper>
   )
 }
