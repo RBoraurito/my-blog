@@ -50,7 +50,7 @@ export function MobileNavigation(props) {
                 <MobileNavItem href="/articles">Articles</MobileNavItem>
                 <MobileNavItem href="/projects">Projects</MobileNavItem>
                 <MobileNavItem href="/stack">Stack</MobileNavItem>
-                <MobileNavItem href="/reading">Reading</MobileNavItem>
+                {/* <MobileNavItem href="/reading">Reading</MobileNavItem> */}
               </ul>
             </nav>
           </Popover.Panel>
@@ -68,7 +68,7 @@ export function DesktopNavigation(props) {
         <NavItem href="/articles">Articles</NavItem>
         <NavItem href="/projects">Projects</NavItem>
         <NavItem href="/stack">Stack</NavItem>
-        <NavItem href="/reading">Reading</NavItem>
+        {/* <NavItem href="/reading">Reading</NavItem> */}
       </ul>
     </nav>
   )
