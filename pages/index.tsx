@@ -54,7 +54,7 @@ export default function Home({ articles }) {
             Frontend Developer
           </h1>
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-          I’m Ricardo Boraure, can find me somewhere as RBoraure. I’m Frontend Developer specialized in React, Vue.js and its meta frameworks <strong>(Next.js, Nuxt.js, Remix)</strong>, I love the <strong>JAMStack</strong> and decoupled architectures and have a deep interest in new tech and modern web development.
+          I’m Ricardo Boraure, can find me somewhere as RBoraure. I’m Frontend Developer specialized in React, Vue.js and its meta frameworks <strong>(Next.js, Nuxt.js, Remix)</strong>, I love <strong>JAMStack</strong>, decoupled architectures, and have a deep interest in new tech and modern web development.
           </p>
           <div className="mt-6 flex gap-6">
             <SocialLink
