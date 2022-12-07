@@ -24,11 +24,19 @@ export function Card({ as: Component = 'div', className, children }: CardProps) 
   )
 }
 
-Card.Link = function CardLink({ children, href,...props }) {
+
+interface CardLinkProps {
+  children: ReactNode;
+  href?: string;
+  target?: string;
+  [key: string]: any;
+}
+
+Card.Link = function CardLink({ children, href, target,...props }: CardLinkProps) {
   return (
     <>
       <div className="absolute -inset-y-6 -inset-x-4 z-0 scale-95 bg-zinc-50 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 dark:bg-zinc-800/50 sm:-inset-x-6 sm:rounded-2xl" />
-      <Link href={href} {...props}>
+      <Link href={href} target={target} {...props}>
         <span className="absolute -inset-y-6 -inset-x-4 z-20 sm:-inset-x-6 sm:rounded-2xl" />
         <span className="relative z-10">{children}</span>
       </Link>

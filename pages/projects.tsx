@@ -3,47 +3,15 @@ import Head from 'next/head'
 
 import { Card } from 'components/Card'
 import { SimpleLayout } from 'components/SimpleLayout'
-import logoAnimaginary from 'images/logos/animaginary.svg'
-import logoCosmos from 'images/logos/cosmos.svg'
-import logoHelioStream from 'images/logos/helio-stream.svg'
-import logoOpenShuttle from 'images/logos/open-shuttle.svg'
-import logoPlanetaria from 'images/logos/planetaria.svg'
+import dentalLogo from 'images/logos/dental.jpeg'
 
 const projects = [
   {
-    name: 'Planetaria',
+    name: 'Dental Seguros',
     description:
-      'Creating technology to empower civilians to explore space on their own terms.',
-    link: { href: 'http://planetaria.tech', label: 'planetaria.tech' },
-    logo: logoPlanetaria,
-  },
-  {
-    name: 'Animaginary',
-    description:
-      'High performance web animation library, hand-written in optimized WASM.',
-    link: { href: '#', label: 'github.com' },
-    logo: logoAnimaginary,
-  },
-  {
-    name: 'HelioStream',
-    description:
-      'Real-time video streaming library, optimized for interstellar transmission.',
-    link: { href: '#', label: 'github.com' },
-    logo: logoHelioStream,
-  },
-  {
-    name: 'cosmOS',
-    description:
-      'The operating system that powers our Planetaria space shuttles.',
-    link: { href: '#', label: 'github.com' },
-    logo: logoCosmos,
-  },
-  {
-    name: 'OpenShuttle',
-    description:
-      'The schematics for the first rocket I designed that successfully made it to orbit.',
-    link: { href: '#', label: 'github.com' },
-    logo: logoOpenShuttle,
+      'A JAMStack Website build with Nuxt 2, Netlify CMS and Bulma CSS for styling.',
+    link: { href: 'https://dentalseguros.org/', label: 'Dental Seguros' },
+    logo: dentalLogo,
   },
 ]
 
@@ -62,15 +30,15 @@ export default function Projects() {
   return (
     <>
       <Head>
-        <title>Projects - Spencer Sharp</title>
+        <title>Projects - Ricardo Boraure</title>
         <meta
           name="description"
-          content="Things I’ve made trying to put my dent in the universe."
+          content="Thing’s that I did for work or for fun."
         />
       </Head>
       <SimpleLayout
-        title="Things I’ve made trying to put my dent in the universe."
-        intro="I’ve worked on tons of little projects over the years but these are the ones that I’m most proud of. Many of them are open-source, so if you see something that piques your interest, check out the code and contribute if you have ideas for how it can be improved."
+        title="Thing’s that I did for work or for fun."
+        intro="I’ve worked on several projects throught my professional life, but also I like to build Websites/Web Apps for good causes and interesting topics."
       >
         <ul
           role="list"
@@ -82,12 +50,12 @@ export default function Projects() {
                 <Image
                   src={project.logo}
                   alt=""
-                  className="h-8 w-8"
+                  className="h-8 w-8 rounded-full"
                   unoptimized
                 />
               </div>
               <h2 className="mt-6 text-base font-semibold text-zinc-800 dark:text-zinc-100">
-                <Card.Link href={project.link.href}>{project.name}</Card.Link>
+                <Card.Link href={project.link.href} target="_blank">{project.name}</Card.Link>
               </h2>
               <Card.Description>{project.description}</Card.Description>
               <p className="relative z-10 mt-6 flex text-sm font-medium text-zinc-400 transition group-hover:text-blue-500 dark:text-zinc-200">
