@@ -43,7 +43,7 @@ const resume = [
       dateTime: new Date('September 21, 2020').toDateString(),
     },
     end: {
-      label: 'apr. 2020',
+      label: 'apr. 2021',
       dateTime: new Date('April 16, 2021').toDateString(),
     },
   },
