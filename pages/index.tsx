@@ -47,6 +47,7 @@ export default function Home({ articles }) {
           name="description"
           content="I’m Ricardo Boraure, can find me somewhere as RBoraure. I’m Frontend Developer specialized in React, Vue.js and its meta frameworks(Next.js, Nuxt.js, Remix), I love the JAMStack and decoupled architectures and have a deep interest in new tech and modern web development."
         />
+        <meta property="og:image" content="/portrait.jpg" />
       </Head>
       <Container className="mt-9">
         <div className="max-w-2xl">
