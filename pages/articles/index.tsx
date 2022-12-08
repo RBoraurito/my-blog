@@ -4,6 +4,7 @@ import { Card } from 'components/Card'
 import { SimpleLayout } from 'components/SimpleLayout'
 import { getAllArticles } from 'lib/getAllArticles'
 import { formatDate } from 'lib/formatDate'
+import type { Article } from 'lib/getAllArticles'
 
 function Article({ article }) {
   return (
@@ -34,7 +35,7 @@ function Article({ article }) {
   )
 }
 
-export default function ArticlesIndex({ articles }) {
+export default function ArticlesIndex({ articles }: { articles: Article[]}) {
   return (
     <>
       <Head>

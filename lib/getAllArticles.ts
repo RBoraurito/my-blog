@@ -4,7 +4,7 @@ import * as path from 'path'
 import React, { FunctionComponent } from 'react'
 
 
-interface Article {
+export interface Article {
   slug: string;
   title: MetaData['title']
   author: MetaData['author']
