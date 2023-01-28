@@ -9,6 +9,30 @@ const nextConfig = {
   experimental: {
     scrollRestoration: true,
   },
+  redirects() {
+    return [
+      {
+        source: '/admin',
+        destination: '/admin/index.html',
+        permanent: true,
+      },
+      {
+        source: '/admin/index',
+        destination: '/admin/index.html',
+        permanent: true,
+      },
+    ]
+  },
+  webpack: (cfg) => {
+    cfg.module.rules.push(
+        {
+            test: /\.md$/,
+            loader: 'frontmatter-markdown-loader',
+            options: { mode: ['react-component'] }
+        }
+    )
+    return cfg;
+  }
 }
 
 const withMDX = nextMDX({
