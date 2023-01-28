@@ -6,6 +6,11 @@ backend:
   # branch: master
 media_folder: public/img
 public_folder: img
+media_library:
+  name: cloudinary
+  config:
+    cloud_name: dzgf40ghh
+    api_key: 958272413457741
 collections:
   - name: "pages"
     label: "Pages"
@@ -15,11 +20,14 @@ collections:
       file: "content/home.md"
       fields:
         - { label: "Title", name: "title", widget: "string"}
-        - { label: "Publish Date", name: "date", widget: "datetime" }
-        - { label: "Body", name: "body", widget: "markdown"}
-        - label: 'Cats'
-          name: "cats"
+        - { label: "Description", name: "description", widget: "markdown" }
+        - label: 'Jobs'
+          name: "jobs"
           widget: list
           fields:
-            - { label: "Name", name: "name", widget: "string"}
-            - { label: "Description", name: "description", widget: "text"}
+            - { label: "Company", name: "company", widget: "string"}
+            - { label: "Position", name: "position", widget: "string", default: 'Frontend Developer'}
+            - { label: "Start date", name: "startDate", widget: "date", date_format: "MMM. YYYY"}
+            - { label: "End date", name: "endDate", widget: "date", date_format: "MMM. YYYY"}
+            - { label: "Is Actual", name: 'isActual', widget: "boolean", default: false }
+            - { label: "Image",  name: "image", widget: "image",allow_multiple: false }
