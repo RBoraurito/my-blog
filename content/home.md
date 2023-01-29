@@ -1,4 +1,12 @@
 ---
+date: 2019-03-17T19:31:20.591Z
+metaTitle: Ricardo Boraure - Frontend Developer becoming T Shape
+metaDescription: I’m Ricardo Boraure, can find me somewhere as RBoraure. I’m
+  Frontend Developer specialized in React, Vue.js and its meta
+  frameworks(Next.js, Nuxt.js, Remix), I love the JAMStack and decoupled
+  architectures and have a deep interest in new tech and modern web
+  development."
+metaImage: https://res.cloudinary.com/dzgf40ghh/image/upload/v1674951877/portrait_bq1urr.jpg
 title: Frontend Developer
 description: I’m Ricardo Boraure, can find me somewhere as RBoraure. I’m
   Frontend Developer specialized in React, Vue.js and its meta
