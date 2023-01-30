@@ -10,53 +10,36 @@ import {
 import { generateRssFeed } from 'lib/generateRssFeed'
 import { getAllArticles } from 'lib/getAllArticles'
 import { formatDate } from 'lib/formatDate'
-import { Feature } from 'components/home/Feature'
 import { Resume } from 'components/home/Resume'
+import { marked } from 'marked'
 
-function Article({ article }) {
-  return (
-    <Card as="article">
-      <Card.Title href={`/articles/${article.slug}`}>
-        {article.title}
-      </Card.Title>
-      <Card.Eyebrow as="time" dateTime={article.date} decorate>
-        {formatDate(article.date)}
-      </Card.Eyebrow>
-      <Card.Description>{article.description}</Card.Description>
-      <Card.Cta>Read article</Card.Cta>
-    </Card>
-  )
-}
+import * as content from 'content/home.md'
+import type { Home } from 'types/home'
 
-function SocialLink({ icon: Icon, href ,...props }) {
-  return (
-    <Link className="group -m-1 p-1" href={href} {...props}>
-      <Icon className="h-6 w-6 fill-zinc-500 transition group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300" />
-    </Link>
-  )
-}
+const { title, description, metaTitle, metaDescription, metaImage } = content as unknown as Home
 
-export default function Home({ articles }) {
+
+export default function HomePage({ articles }) {
+
   return (
     <>
       <Head>
         <title>
-          Ricardo Boraure - Frontend Developer becoming T Shape
+          {metaTitle}
         </title>
         <meta
           name="description"
-          content="I’m Ricardo Boraure, can find me somewhere as RBoraure. I’m Frontend Developer specialized in React, Vue.js and its meta frameworks(Next.js, Nuxt.js, Remix), I love the JAMStack and decoupled architectures and have a deep interest in new tech and modern web development."
+          content={metaDescription}
         />
-        <meta property="og:image" content="/portrait.jpg" />
+        <meta property="og:image" content={metaImage} />
       </Head>
       <Container className="mt-9">
         <div className="max-w-2xl">
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-            Frontend Developer
+            {title}
           </h1>
-          <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-          I’m Ricardo Boraure, can find me somewhere as RBoraure. I’m Frontend Developer specialized in React, Vue.js and its meta frameworks <strong>(Next.js, Nuxt.js, Remix)</strong>, I love <strong>JAMStack</strong>, decoupled architectures, and have a deep interest in new tech and modern web development.
-          </p>
+          <div className="mt-6 text-base text-zinc-600 dark:text-zinc-400" dangerouslySetInnerHTML={{__html: marked.parse(description)}}>
+          </div>
           <div className="mt-6 flex gap-6">
             <SocialLink
               href="https://github.com/RBoraurito"
@@ -100,4 +83,27 @@ export async function getStaticProps() {
         .map(({ component, ...meta }) => meta),
     },
   }
+}
+
+function Article({ article }) {
+  return (
+    <Card as="article">
+      <Card.Title href={`/articles/${article.slug}`}>
+        {article.title}
+      </Card.Title>
+      <Card.Eyebrow as="time" dateTime={article.date} decorate>
+        {formatDate(article.date)}
+      </Card.Eyebrow>
+      <Card.Description>{article.description}</Card.Description>
+      <Card.Cta>Read article</Card.Cta>
+    </Card>
+  )
+}
+
+function SocialLink({ icon: Icon, href ,...props }) {
+  return (
+    <Link className="group -m-1 p-1" href={href} {...props}>
+      <Icon className="h-6 w-6 fill-zinc-500 transition group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300" />
+    </Link>
+  )
 }

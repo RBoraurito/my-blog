@@ -7,6 +7,13 @@ import webcat from 'images/webcat.jpeg';
 import puntoCero from 'images/punto-cero.jpeg';
 import kation from 'images/kation.jpeg';
 
+import * as content from 'content/home.md'
+import { Home } from 'types/home';
+import {format} from 'date-fns'
+import { JobDateFormat } from 'values/dateFormats';
+
+const { jobs } = content as unknown as Home
+
 const resume = [
   {
     company: 'Webcat, LLC',
@@ -61,6 +68,9 @@ const resume = [
     },
   },
 ]
+
+const formatDate = (date: string) => format(new Date(date), JobDateFormat)
+
 export function Resume() {
 
   return (
@@ -70,10 +80,10 @@ export function Resume() {
         <span className="ml-3">Work</span>
       </h2>
       <ol className="mt-6 space-y-4">
-        {resume.map((role, roleIndex) => (
-          <li key={roleIndex} className="flex gap-4">
+        {jobs.map((role) => (
+          <li key={role.company} className="flex gap-4">
             <div className="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
-              <Image src={role.logo} alt="" className="h-7 w-7 rounded-full" />
+              <Image src={role.image} width={40} height={40} alt="" className="h-7 w-7 rounded-full" />
             </div>
             <dl className="flex flex-auto flex-wrap gap-x-2">
               <dt className="sr-only">Company</dt>
@@ -82,20 +92,20 @@ export function Resume() {
               </dd>
               <dt className="sr-only">Role</dt>
               <dd className="text-xs text-zinc-500 dark:text-zinc-400">
-                {role.title}
+                {role.position}
               </dd>
               <dt className="sr-only">Date</dt>
               <dd
                 className="ml-auto text-xs text-zinc-400 dark:text-zinc-500"
-                aria-label={`${role.start.label ?? role.start} until ${role.end
+                aria-label={`${role.startDate} until ${role.endDate
                 }`}
               >
-                <time dateTime={role.start.dateTime}>
-                  {role.start.label}
+                <time dateTime={new Date(role.startDate).toDateString()}>
+                  {formatDate(role.startDate)}
                 </time>{' '}
                 <span aria-hidden="true">—</span>{' '}
-                <time dateTime={role.end.dateTime}>
-                  {role.end.label}
+                <time dateTime={new Date(role.endDate).toDateString()}>
+                  {formatDate(role.endDate)}
                 </time>
               </dd>
             </dl>
