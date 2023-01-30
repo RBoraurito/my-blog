@@ -19,6 +19,9 @@ collections:
       name: "home"
       file: "content/home.md"
       fields:
+        - { label: "Meta Title", name: "metaTitle", widget: "string" }
+        - { label: "Meta Description", name: "metaDescription", widget: "text" }
+        - { label: "Meta Image", name: "metaImage", widget: "image" }
         - { label: "Title", name: "title", widget: "string"}
         - { label: "Description", name: "description", widget: "markdown" }
         - label: 'Jobs'
@@ -27,7 +30,7 @@ collections:
           fields:
             - { label: "Company", name: "company", widget: "string"}
             - { label: "Position", name: "position", widget: "string", default: 'Frontend Developer'}
-            - { label: "Start date", name: "startDate", widget: "date", date_format: "MMM. YYYY"}
-            - { label: "End date", name: "endDate", widget: "date", date_format: "MMM. YYYY"}
+            - { label: "Start date", name: "startDate", widget: "date" }
+            - { label: "End date", name: "endDate", widget: "date" }
             - { label: "Is Actual", name: 'isActual', widget: "boolean", default: false }
             - { label: "Image",  name: "image", widget: "image",allow_multiple: false }
