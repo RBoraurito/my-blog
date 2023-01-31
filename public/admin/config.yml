@@ -83,3 +83,12 @@ collections:
             - { label: "Image", name: "image", widget: "image" }
             - { label: "Link label", name: "linkLabel", widget: "string" }
             - { label: "Link href", name: "linkHref", widget: "string" }
+    - label: "Articles"
+      name: "articles"
+      file: "content/en/articles.md"
+      fields:
+        - { label: "Meta Title", name: "metaTitle", widget: "string" }
+        - { label: "Meta Description", name: "metaDescription", widget: "text" }
+        - { label: "Meta Image", name: "metaImage", widget: "image" }
+        - { label: "Title", name: "title", widget: "string"}
+        - { label: "Description", name: "description", widget: "text" }

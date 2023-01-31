@@ -6,6 +6,41 @@ import { getAllArticles } from 'lib/getAllArticles'
 import { formatDate } from 'lib/formatDate'
 import type { Article } from 'lib/getAllArticles'
 
+import * as content from 'content/en/articles.md'
+import { ArticlesPage } from 'types/articles'
+
+const { title, description, metaTitle, metaDescription, metaImage } = content as unknown as ArticlesPage
+
+export default function ArticlesIndex({ articles }: { articles: Article[]}) {
+  return (
+    <>
+      <Head>
+        <title>{metaTitle}</title>
+        <meta
+          name="description"
+          content={metaDescription}
+        />
+        <meta
+          name="og:image"
+          content={metaImage}
+        />
+      </Head>
+      <SimpleLayout
+        title={title}
+        intro={description}
+      >
+        <div className="md:border-l md:border-zinc-100 md:pl-6 md:dark:border-zinc-700/40">
+          <div className="flex max-w-3xl flex-col space-y-16">
+            {articles.map((article) => (
+              <Article key={article.slug} article={article} />
+            ))}
+          </div>
+        </div>
+      </SimpleLayout>
+    </>
+  )
+}
+
 function Article({ article }) {
   return (
     <article className="md:grid md:grid-cols-4 md:items-baseline">
@@ -32,32 +67,6 @@ function Article({ article }) {
         {formatDate(article.date)}
       </Card.Eyebrow>
     </article>
-  )
-}
-
-export default function ArticlesIndex({ articles }: { articles: Article[]}) {
-  return (
-    <>
-      <Head>
-        <title>Articles - Ricardo Boraure</title>
-        <meta
-          name="description"
-          content="Writing about my experiences, thoughts, and learnings when I code and study some technologies."
-        />
-      </Head>
-      <SimpleLayout
-        title="Writing about web development and tech stuff"
-        intro="All my thoughts, learnings, and experiences when I code and study. I’m mainly focused on Frontend, but I’m constantly learning other technologie."
-      >
-        <div className="md:border-l md:border-zinc-100 md:pl-6 md:dark:border-zinc-700/40">
-          <div className="flex max-w-3xl flex-col space-y-16">
-            {articles.map((article) => (
-              <Article key={article.slug} article={article} />
-            ))}
-          </div>
-        </div>
-      </SimpleLayout>
-    </>
   )
 }
 
