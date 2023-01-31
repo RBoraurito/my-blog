@@ -15,7 +15,7 @@ sections:
           some cases helps with base styling(if you don’t reset your styles).
           Nowadays you have a lot of tags that help you to show the user the
           information in the right way.
-        link: /
+        link: ""
       - title: CSS
         description: As you know this is the language used to give style to our HTML,
           knowing the newest features of this language helps you make your work
@@ -24,7 +24,7 @@ sections:
           nesting](https://www.w3.org/TR/css-nesting-1/), help you make
           decisions about which tools use or don’t use the native features when
           it’s possible.
-        link: /
+        link: ""
       - title: Javascript
         description: The programming part in Frontend, this language is useful in
           Frontend and Backend, part of learning Javascript is learning how the
@@ -33,7 +33,7 @@ sections:
           storage, but also is important to learn how the language works
           internally, things like hoisting, event bubbling, scope, asynchronism,
           etc. But keep in mind that all of these things are fun to learn.
-        link: /
+        link: ""
     title: Frontend Fundamentals
   - title: UI Library/Framework
     tech:
