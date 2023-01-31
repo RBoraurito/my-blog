@@ -65,4 +65,21 @@ collections:
                 - { label: "Title", name: "title", widget: "string"}
                 - { label: "Description", name: "description", widget: "markdown" }
                 - { label: "Link", name: "link", widget: "string", required: false}
-          
+    - label: "Projects"
+      name: "projects"
+      file: "content/en/projects.md"
+      fields:
+        - { label: "Meta Title", name: "metaTitle", widget: "string" }
+        - { label: "Meta Description", name: "metaDescription", widget: "text" }
+        - { label: "Meta Image", name: "metaImage", widget: "image" }
+        - { label: "Title", name: "title", widget: "string"}
+        - { label: "Description", name: "description", widget: "text" }
+        - label: "Projects"
+          name: "projects"
+          widget: "list"
+          fields:
+            - { label: "Title", name: "title", widget: "string" }
+            - { label: "Description", name: "description", widget: "text" }
+            - { label: "Image", name: "image", widget: "image" }
+            - { label: "Link label", name: "linkLabel", widget: "string" }
+            - { label: "Link href", name: "linkHref", widget: "string" }

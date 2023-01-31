@@ -5,6 +5,9 @@ import { Card } from 'components/Card'
 import { SimpleLayout } from 'components/SimpleLayout'
 import dentalLogo from 'images/logos/dental.jpeg'
 
+import * as content from 'content/en/projects.md'
+import { ProjectsPage } from 'types/projects'
+
 const projects = [
   {
     name: 'Dental Seguros',
@@ -26,42 +29,52 @@ function LinkIcon(props) {
   )
 }
 
+const {
+  metaTitle,
+  metaDescription,
+  metaImage,
+  title,
+  description,
+  projects: projectList
+} = content as unknown as ProjectsPage
+
 export default function Projects() {
   return (
     <>
       <Head>
-        <title>Projects - Ricardo Boraure</title>
+        <title>{metaTitle}</title>
         <meta
           name="description"
-          content="Thing’s that I did for work or for fun."
+          content={metaDescription}
         />
       </Head>
       <SimpleLayout
-        title="Thing’s that I did for work or for fun."
-        intro="I’ve worked on several projects throught my professional life, but also I like to build Websites/Web Apps for good causes and interesting topics."
+        title={title}
+        intro={description}
       >
         <ul
           role="list"
           className="grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-3"
         >
-          {projects.map((project) => (
-            <Card as="li" key={project.name}>
+          {projectList.map((project) => (
+            <Card as="li" key={project.title}>
               <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
                 <Image
-                  src={project.logo}
+                  src={project.image}
+                  width={48}
+                  height={48}
                   alt=""
                   className="h-8 w-8 rounded-full"
-                  unoptimized
                 />
               </div>
               <h2 className="mt-6 text-base font-semibold text-zinc-800 dark:text-zinc-100">
-                <Card.Link href={project.link.href} target="_blank">{project.name}</Card.Link>
+                <Card.Link href={project.linkHref} target="_blank">{project.title}</Card.Link>
               </h2>
               <Card.Description>{project.description}</Card.Description>
-              <p className="relative z-10 mt-6 flex text-sm font-medium text-zinc-400 transition group-hover:text-blue-500 dark:text-zinc-200">
+              <a href={project.linkHref} target="_blank" className="relative z-10 mt-6 flex text-sm font-medium text-zinc-400 transition group-hover:text-blue-500 dark:text-zinc-200" rel="noreferrer">
                 <LinkIcon className="h-6 w-6 flex-none" />
-                <span className="ml-2">{project.link.label}</span>
-              </p>
+                <span className="ml-2">{project.linkLabel}</span>
+              </a>
             </Card>
           ))}
         </ul>
