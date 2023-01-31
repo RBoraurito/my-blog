@@ -82,7 +82,7 @@ interface ToolProps {
 function Tool({ title, href, children }: ToolProps) {
   return (
     <Card as="li">
-      <Card.Title as="h3" href={href} target="_blank">
+      <Card.Title as="h3" href={href} target="_blank" hasOverallLink={false}>
         {title}
       </Card.Title>
       <Card.Description>{children}</Card.Description>

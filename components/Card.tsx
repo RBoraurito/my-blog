@@ -29,14 +29,18 @@ interface CardLinkProps {
   children: ReactNode;
   href?: string;
   target?: string;
+  hasOverallLink?: boolean;
   [key: string]: any;
 }
 
-Card.Link = function CardLink({ children, href, target,...props }: CardLinkProps) {
+Card.Link = function CardLink({ children, href, target, hasOverallLink = true,...props }: CardLinkProps) {
   return (
     <>
       <div className="absolute -inset-y-6 -inset-x-4 z-0 scale-95 bg-zinc-50 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 dark:bg-zinc-800/50 sm:-inset-x-6 sm:rounded-2xl" />
       <Link href={href} target={target} {...props}>
+        {hasOverallLink && (
+          <span className="absolute -inset-y-6 -inset-x-4 z-20 sm:-inset-x-6 sm:rounded-2xl" />
+        )}
         <span className="relative z-10 hover:underline">{children}</span>
       </Link>
     </>
@@ -46,16 +50,17 @@ Card.Link = function CardLink({ children, href, target,...props }: CardLinkProps
 interface CardTitleProps {
   as?: string;
   href?: string;
+  hasOverallLink?: boolean;
   children: ReactNode;
   target?: string;
 }
 
-Card.Title = function CardTitle({ as: Component = 'h2', href, target = '',children }: CardTitleProps) {
+Card.Title = function CardTitle({ as: Component = 'h2', href, target = '', hasOverallLink = true, children }: CardTitleProps) {
   const Wrapper = ({children,...props}: WrapperProps) => <Component {...props}>{children}</Component>
 
   return (
     <Wrapper className="text-base font-semibold tracking-tight text-zinc-800 dark:text-zinc-100">
-      {href ? <Card.Link href={href} target={target}>{children}</Card.Link> : children}
+      {href ? <Card.Link href={href} target={target} hasOverallLink={hasOverallLink}>{children}</Card.Link> : children}
     </Wrapper>
   )
 }
