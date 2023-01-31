@@ -139,7 +139,6 @@ module.exports = {
             textDecorationColor: 'var(--tw-prose-underline-hover)',
           },
           strong: {
-            color: 'var(--tw-prose-bold)',
             fontWeight: theme('fontWeight.semibold'),
           },
           code: {

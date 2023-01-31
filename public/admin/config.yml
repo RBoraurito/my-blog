@@ -44,3 +44,25 @@ collections:
         - { label: "Title", name: "title", widget: "string"}
         - { label: "Description", name: "description", widget: "markdown" }
         - { label: "Image", name: "image", widget: "image"}
+    - label: "Stack"
+      name: "stack"
+      file: "content/en/stack.md"
+      fields: 
+        - { label: "Meta Title", name: "metaTitle", widget: "string" }
+        - { label: "Meta Description", name: "metaDescription", widget: "text" }
+        - { label: "Meta Image", name: "metaImage", widget: "image" }
+        - { label: "Title", name: "title", widget: "string"}
+        - { label: "Description", name: "description", widget: "text" }
+        - label: "Sections"
+          name: "sections"
+          widget: "list"
+          fields:
+            - { label: "Title", name: "title", widget: "string"}
+            - label: "Technologies"
+              name: "tech"
+              widget: "list"
+              fields:
+                - { label: "Title", name: "title", widget: "string"}
+                - { label: "Description", name: "description", widget: "markdown" }
+                - { label: "Link", name: "link", widget: "string", required: false}
+          
