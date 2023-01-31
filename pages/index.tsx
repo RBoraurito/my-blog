@@ -13,7 +13,7 @@ import { formatDate } from 'lib/formatDate'
 import { Resume } from 'components/home/Resume'
 import { marked } from 'marked'
 
-import * as content from 'content/home.md'
+import * as content from 'content/en/home.md'
 import type { Home } from 'types/home'
 
 const { title, description, metaTitle, metaDescription, metaImage } = content as unknown as Home

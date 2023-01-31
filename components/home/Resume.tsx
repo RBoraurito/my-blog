@@ -7,7 +7,7 @@ import webcat from 'images/webcat.jpeg';
 import puntoCero from 'images/punto-cero.jpeg';
 import kation from 'images/kation.jpeg';
 
-import * as content from 'content/home.md'
+import * as content from 'content/en/home.md'
 import { Home } from 'types/home';
 import {format} from 'date-fns'
 import { JobDateFormat } from 'values/dateFormats';

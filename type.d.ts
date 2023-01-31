@@ -4,3 +4,9 @@ interface MetaData {
   title: string;
   description: string;
 }
+
+interface pageMetaData {
+  metaTitle: string;
+  metaDescription: string;
+  metaImage: string;
+}

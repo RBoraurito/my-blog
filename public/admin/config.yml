@@ -17,7 +17,7 @@ collections:
     files:
     - label: "Home"
       name: "home"
-      file: "content/home.md"
+      file: "content/en/home.md"
       fields:
         - { label: "Meta Title", name: "metaTitle", widget: "string" }
         - { label: "Meta Description", name: "metaDescription", widget: "text" }
@@ -34,3 +34,13 @@ collections:
             - { label: "End date", name: "endDate", widget: "date" }
             - { label: "Is Actual", name: 'isActual', widget: "boolean", default: false }
             - { label: "Image",  name: "image", widget: "image",allow_multiple: false }
+    - label: "About us"
+      name: "about-us"
+      file: "content/en/about-us.md"
+      fields:
+        - { label: "Meta Title", name: "metaTitle", widget: "string" }
+        - { label: "Meta Description", name: "metaDescription", widget: "text" }
+        - { label: "Meta Image", name: "metaImage", widget: "image" }
+        - { label: "Title", name: "title", widget: "string"}
+        - { label: "Description", name: "description", widget: "markdown" }
+        - { label: "Image", name: "image", widget: "image"}
