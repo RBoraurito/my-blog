@@ -12,7 +12,7 @@ description: Most of the time you have so many options to become a Software
   Developer, but with so many options it’s complicated to begin on the right
   foot, in this post I’ll tell you how I became a Frontend dev and my personal
   recommendations to don’t make the mistakes I made.
-content: E﻿so mismo claro que yes
+content: "**E﻿so mismo claro que yes**"
 ---
 My journey began in my last 3 years of high school, studying Pascal, Visual Basic, MySQL, a bit of Java, and some other hardware-related stuff, it wasn’t until the last year that I learn a little bit of PHP and Javascript(NodeJS), but not too much just context to know that those things exist, unfortunately, I didn’t take advantage of that opportunity to learn about modern web development, nowadays I understand the value of those classes.
 
