@@ -9,8 +9,8 @@ export async function generateRssFeed() {
   const articles = await getAllArticles()
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL
   const author = {
-    name: 'Spencer Sharp',
-    email: 'spencer@planetaria.tech',
+    name: 'Ricardo Boraure',
+    email: 'ricardoboraure@gmail.com',
   }
 
   const feed = new Feed({
@@ -29,9 +29,9 @@ export async function generateRssFeed() {
   })
 
   for (let article of articles) {
-    const {component, slug, title, description, date} = article
+    const {body, slug, title, description, publishDate} = article
     const url = `${siteUrl}/articles/${slug}`
-    const Component = React.createElement(component, {isRssFeed: true})
+    const Component = React.createElement(body, {isRssFeed: true})
     const html = ReactDOMServer.renderToStaticMarkup(Component)
 
     feed.addItem({
@@ -42,7 +42,7 @@ export async function generateRssFeed() {
       content: html,
       author: [author],
       contributor: [author],
-      date: new Date(date),
+      date: new Date(publishDate),
     })
   }
 

@@ -92,3 +92,18 @@ collections:
         - { label: "Meta Image", name: "metaImage", widget: "image" }
         - { label: "Title", name: "title", widget: "string"}
         - { label: "Description", name: "description", widget: "text" }
+  - name: "articles"
+    label: "Articles"
+    identifier_field: "title"
+    folder: content/en/posts
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Meta Title", name: "metaTitle", widget: "string" }
+      - { label: "Meta Description", name: "metaDescription", widget: "text" }
+      - { label: "Meta Image", name: "metaImage", widget: "image" }
+      - { label: "Author", name: "author", widget: "string", default: "Ricardo Boraure"}
+      - { label: "Publish Date", name: "publishDate", widget: "datetime"}
+      - { label: "Title", name: "title", widget: "string"}
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "content", name: "content", widget: "markdown" }

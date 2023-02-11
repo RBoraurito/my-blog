@@ -1,35 +1,32 @@
-import { ArticleLayoutProps } from 'components/ArticleLayout';
 import glob from 'fast-glob'
 import * as path from 'path'
-import React, { FunctionComponent } from 'react'
 
-
-export interface Article {
+export interface Article extends MetaData {
   slug: string;
-  title: MetaData['title']
-  author: MetaData['author']
-  date: MetaData['date']
-  description: MetaData['description']
-  component: FunctionComponent<{isRssFeed: boolean}>
-} 
+  title: string;
+  description: string;
+  content: string;
+}
 
-async function importArticle(articleFilename: string) {
-  let { meta, default: component } = await import(
-    `../pages/articles/${articleFilename}`
+export async function importArticle(articleFilename: string): Promise<Article> {
+  let { ...attrs } = await import(
+    `../content/en/posts/${articleFilename}`
   )
+
+  delete attrs.default
+
   return {
-    slug: articleFilename.replace(/(\/index)?\.mdx$/, ''),
-    ...meta,
-    component,
+    slug: articleFilename.replace(/(\/index)?\.md$/, ''),
+    ...attrs,
   }
 }
 
-export async function getAllArticles() {
-  let articleFilenames = await glob(['*.mdx', '*/index.mdx'], {
-    cwd: path.join(process.cwd(), 'pages/articles'),
+export async function getAllArticles(): Promise<Article[]> {
+  let articleFilenames = await glob('*.md', {
+    cwd: path.join(process.cwd(), 'content/en/posts'),
   })
 
   let articles: Article[] = await Promise.all(articleFilenames.map(importArticle))
 
-  return articles.sort((a, z) => new Date(z.date).getDate() - new Date(a.date).getDate())
+  return articles.sort((a, z) => new Date(z.publishDate).getDate() - new Date(a.publishDate).getDate())
 }

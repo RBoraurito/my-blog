@@ -41,7 +41,7 @@ export default function ArticlesIndex({ articles }: { articles: Article[]}) {
   )
 }
 
-function Article({ article }) {
+function Article({ article }: {article: Article}) {
   return (
     <article className="md:grid md:grid-cols-4 md:items-baseline">
       <Card className="md:col-span-3">
@@ -50,21 +50,21 @@ function Article({ article }) {
         </Card.Title>
         <Card.Eyebrow
           as="time"
-          dateTime={article.date}
+          dateTime={article.publishDate}
           className="md:hidden"
           decorate
         >
-          {formatDate(article.date)}
+          {formatDate(article.publishDate)}
         </Card.Eyebrow>
         <Card.Description>{article.description}</Card.Description>
         <Card.Cta>Read article</Card.Cta>
       </Card>
       <Card.Eyebrow
         as="time"
-        dateTime={article.date}
+        dateTime={article.publishDate}
         className="mt-1 hidden md:block"
       >
-        {formatDate(article.date)}
+        {formatDate(article.publishDate)}
       </Card.Eyebrow>
     </article>
   )
@@ -73,7 +73,7 @@ function Article({ article }) {
 export async function getStaticProps() {
   return {
     props: {
-      articles: (await getAllArticles()).map(({ component, ...meta }) => meta),
+      articles: (await getAllArticles()).map(({ content, ...meta }) => meta),
     },
   }
 }

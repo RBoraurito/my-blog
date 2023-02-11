@@ -8,7 +8,7 @@ import {
   LinkedInIcon,
 } from 'components/SocialIcons'
 import { generateRssFeed } from 'lib/generateRssFeed'
-import { getAllArticles } from 'lib/getAllArticles'
+import { getAllArticles, Article } from 'lib/getAllArticles'
 import { formatDate } from 'lib/formatDate'
 import { Resume } from 'components/home/Resume'
 import { marked } from 'marked'
@@ -75,24 +75,23 @@ export async function getStaticProps() {
   if (process.env.NODE_ENV === 'production') {
     await generateRssFeed()
   }
-
   return {
     props: {
       articles: (await getAllArticles())
         .slice(0, 4)
-        .map(({ component, ...meta }) => meta),
+        .map(({ content, ...meta }) => meta),
     },
   }
 }
 
-function Article({ article }) {
+function Article({ article }: { article: Article}) {
   return (
     <Card as="article">
       <Card.Title href={`/articles/${article.slug}`}>
         {article.title}
       </Card.Title>
-      <Card.Eyebrow as="time" dateTime={article.date} decorate>
-        {formatDate(article.date)}
+      <Card.Eyebrow as="time" dateTime={article.publishDate} decorate>
+        {formatDate(article.publishDate)}
       </Card.Eyebrow>
       <Card.Description>{article.description}</Card.Description>
       <Card.Cta>Read article</Card.Cta>

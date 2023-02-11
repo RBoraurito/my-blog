@@ -1,8 +1,6 @@
-interface MetaData {
+interface MetaData extends pageMetaData {
   author: string;
-  date: string;
-  title: string;
-  description: string;
+  publishDate: string;
 }
 
 interface pageMetaData {

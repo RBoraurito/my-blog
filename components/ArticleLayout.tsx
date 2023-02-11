@@ -6,11 +6,12 @@ import { formatDate } from 'lib/formatDate'
 import { Prose } from 'components/Prose'
 import { ArrowLeftIcon } from 'components/icon/ArrowLeft'
 import { ReactNode } from 'react'
+import { Article } from 'lib/getAllArticles'
 
 export interface ArticleLayoutProps {
-  children: ReactNode;
-  meta: MetaData;
-  isRssFeed: boolean;
+  children: JSX.Element;
+  meta: Omit<Article, 'content'>;
+  isRssFeed?: boolean;
   previousPathname: string;
 }
 
@@ -29,8 +30,9 @@ export function ArticleLayout({
   return (
     <>
       <Head>
-        <title>{`${meta.title} - Spencer Sharp`}</title>
-        <meta name="description" content={meta.description} />
+        <title>{`${meta.metaTitle} - Ricardo Boraure`}</title>
+        <meta name="description" content={meta.metaDescription} />
+        <meta name="og:image" content={meta.metaImage} />
       </Head>
       <Container className="mt-16 lg:mt-32">
         <div className="xl:relative">
@@ -51,11 +53,11 @@ export function ArticleLayout({
                   {meta.title}
                 </h1>
                 <time
-                  dateTime={meta.date}
+                  dateTime={meta.publishDate}
                   className="order-first flex items-center text-base text-zinc-400 dark:text-zinc-500"
                 >
                   <span className="h-4 w-0.5 rounded-full bg-zinc-200 dark:bg-zinc-500" />
-                  <span className="ml-3">{formatDate(meta.date)}</span>
+                  <span className="ml-3">{formatDate(meta.publishDate)}</span>
                 </time>
               </header>
               <Prose className="mt-8">{children}</Prose>
