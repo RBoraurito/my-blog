@@ -4,6 +4,7 @@ import { Feed } from 'feed'
 import { mkdir, writeFile } from 'fs/promises'
 
 import { getAllArticles } from './getAllArticles'
+import { marked } from 'marked'
 
 export async function generateRssFeed() {
   const articles = await getAllArticles()
@@ -29,9 +30,16 @@ export async function generateRssFeed() {
   })
 
   for (let article of articles) {
-    const {body, slug, title, description, publishDate} = article
+    const {content, slug, title, description, publishDate} = article
     const url = `${siteUrl}/articles/${slug}`
-    const Component = React.createElement(body, {isRssFeed: true})
+    const Component = React.createElement(
+      'div',
+      {
+        isRssFeed: true,
+        dangerouslySetInnerHTML: {
+          __html: marked.parse(content)
+        }
+      })
     const html = ReactDOMServer.renderToStaticMarkup(Component)
 
     feed.addItem({
