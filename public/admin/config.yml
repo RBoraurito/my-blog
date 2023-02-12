@@ -2,8 +2,8 @@ backend:
   # name: test-repo
   name: git-gateway
   # Branch to update (optional; defaults to master)
-  branch: feature/netlify-cms
-  # branch: master
+  # branch: feature/netlify-cms
+  branch: main
 media_folder: public/img
 public_folder: img
 media_library:
